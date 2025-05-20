@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medibot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <div id="navbar">
+        <div id="navbarHeader">
+            <h1>{{ username }}'s Profile</h1>
+        </div>
+        <form id="chatForm">
+            <button type="button" id="newChatButton">New Chat</button>
+        </form>
+        <div id="previousChats">
+            <button id="newChatButton" onclick="loadChatHistory()">Previous Chats</button>
+            <div id="chat-buttons-container">
+                <div id="chat-history"></div>
+            </div>
+        </div>
+        <div id="navbarFooter">
+            <a href="{{ url_for('logout') }}" id="logoutButton">Logout</a>
+        </div>
+    </div>
+
+    <!-- Middle Chatbot Section -->
+    <div id="chatbotSection">
+        <div id="chatHeader">
+            <h2>Hii, I'm Medibot</h2>
+            <p>How can I help you today?</p>
+        </div>
+        <div id="chatlog">
+            <!-- Chat messages will be dynamically added here -->
+        </div>
+        <form id="chatForm">
+            <div id="inputArea">
+                <input type="text" id="userInput" placeholder="Type your question...">
+                <button type="button" id="sendButton">Send</button>
+                <button type="button" id="saveButton">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,10 @@
+flask
+flask-login
+pymongo
+werkzeug
+scikit-learn
+pandas
+python-dotenv
+nltk==3.8.1
+bcrypt
+werkzeug

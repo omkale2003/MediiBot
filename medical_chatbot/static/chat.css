@@ -1,0 +1,292 @@
+/* chatbot.css */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  background-color: #f0f4f8;
+}
+
+/* Left Side Navbar */
+#navbar {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#navbarHeader h1 {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#newChatButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+#newChatButton:hover {
+  background-color: #0056b3;
+}
+
+#logoutButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#logoutButton:hover {
+  background-color: #0056b3;
+}
+
+/* Previous Chats Section */
+#previousChats {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+#previousChats h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#chatList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#chatList li {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#chatList li:hover {
+  background-color: #e0e0e0;
+}
+
+/* Middle Chatbot Section */
+#chatbotSection {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#chatHeader {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#chatHeader h2 {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+#chatHeader p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Chat Log */
+#chatlog {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Input Area */
+#inputArea {
+  display: flex;
+  padding: 10px;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+}
+
+#userInput {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+#userInput:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+#sendButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#sendButton:hover {
+  background-color: #0056b3;
+}
+
+#saveButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#saveButton:hover {
+  background-color: #0056b3;
+}
+
+/* Scrollbar Styling */
+#chatlog::-webkit-scrollbar,
+#previousChats::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chatlog::-webkit-scrollbar-track,
+#previousChats::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+#chatlog::-webkit-scrollbar-thumb,
+#previousChats::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+#chatlog::-webkit-scrollbar-thumb:hover,
+#previousChats::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Chat history panel */
+#chat-history {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.chat-history-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #f8f9fa;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.chat-history-btn:hover {
+  background: var(--secondary-color);
+  color: black;
+  transform: translateX(5px);
+}
+
+.chat-date {
+  display: block;
+  font-size: 0.8em;
+  color: #7f8c8d;
+  margin-bottom: 3px;
+}
+
+.chat-preview {
+  display: block;
+  font-size: 0.9em;
+  color: var(--primary-color);
+}
+
+#loginButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+#loginButton:hover {
+  background-color: #0056b3;
+}
+
+#registerButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+#registerButton:hover {
+  background-color: #0056b3;
+}

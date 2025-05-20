@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<!-- Link to the register.css file -->
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+
+<div class="auth-container">
+    <h2>Register</h2>
+
+    <!-- Display flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('signup') }}" method="POST">
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Username" required>
+            <small class="form-text">
+                Username must be 3 to 8 characters long and contain only letters and numbers.
+            </small>
+        </div>
+        <div class="form-group">
+            <input type="email" name="emailid" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Password" required>
+            <small class="form-text">
+                Password must be at least 8 characters long and contain at least:
+                <ul>
+                    <li>1 uppercase letter</li>
+                    <li>1 lowercase letter</li>
+                    <li>1 digit</li>
+                    <li>1 special character (@$!%*?&)</li>
+                </ul>
+            </small>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+</div>
+{% endblock %}
