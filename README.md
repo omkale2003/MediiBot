@@ -36,7 +36,7 @@ Prerequisites
 - Pip  
 
 Steps  
-
+```
 1. Clone the repository
 git clone https://github.com/yourusername/medical-chatbot.git
 cd medical-chatbot
@@ -59,9 +59,10 @@ python app.py
 
 Open your browser and go to:
 👉 `http://localhost:5000`
+```
 
 📂 Project Structure
-
+```
 medical-chatbot/
 ├── static/
 │   └── style.css
@@ -75,7 +76,7 @@ medical-chatbot/
 ├── train.csv
 ├── requirements.txt
 └── README.md
-
+```
 
 
 ⚙ Configuration
